@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# 📋 Kanban Board - React + TanStack Query
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern Kanban board application built with React, TypeScript, and TanStack Query for efficient server-state management.
 
-Currently, two official plugins are available:
+![Kanban Board Screenshot](https://via.placeholder.com/800x400?text=Kanban+Board+Screenshot)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+[View Live Demo](https://your-app-url.vercel.app) *(Optional - if deployed)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📸 Screenshots
 
-## Expanding the ESLint configuration
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Light Mode](https://via.placeholder.com/400x250?text=Light+Mode) | ![Dark Mode](https://via.placeholder.com/400x250?text=Dark+Mode) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ✅ **Real API Integration** - Fetches data from JSONPlaceholder API
+- ✅ **TanStack Query** - Server-state management with caching
+- ✅ **3-State Handling** - Loading, Error, and Success states
+- ✅ **Dark Mode** - Toggle between light and dark themes
+- ✅ **Search Functionality** - Filter posts in real-time
+- ✅ **CRUD Operations** - Create, Read, Update, Delete posts
+- ✅ **TypeScript** - Type-safe with strict interfaces (NO "any" types!)
+- ✅ **Responsive Design** - Works on all screen sizes
+- ✅ **Optimistic Updates** - Instant UI updates with useMutation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI Framework |
+| **TypeScript** | Type Safety |
+| **Vite** | Build Tool |
+| **Tailwind CSS v4** | Styling |
+| **TanStack Query** | Server-State Management |
+| **Axios** | HTTP Client |
+| **JSONPlaceholder** | Fake REST API |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Project Structure
+src/
+├── api/
+│ ├── client.ts # Axios instance
+│ ├── endpoints/
+│ │ ├── posts.api.ts # Posts API calls
+│ │ └── todos.api.ts # Todos API calls
+│ └── types/
+│ ├── post.types.ts # Post TypeScript interfaces
+│ └── todo.types.ts # Todo TypeScript interfaces
+├── components/
+│ ├── common/
+│ │ ├── Loader.tsx # Loading spinner
+│ │ ├── ErrorFallback.tsx # Error UI
+│ │ └── Card.tsx # Post card component
+│ └── kanban/
+│ ├── KanbanBoard.tsx # Main board
+│ ├── KanbanColumn.tsx # Column component
+│ └── KanbanItem.tsx # Item component
+├── hooks/
+│ ├── usePosts.ts # Posts query hooks
+│ └── useTodos.ts # Todos query hooks
+├── providers/
+│ └── QueryProvider.tsx # React Query provider
+├── App.tsx # Main app
+├── main.tsx # Entry point
+└── index.css # Global styles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/react-kanban-board.git
+
+# Navigate to project
+cd react-kanban-board
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
